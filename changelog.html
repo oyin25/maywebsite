@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - MayWeb Development Control Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --deep-blue-1: #0f172a;
+            --deep-blue-2: #1e293b;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(255, 255, 255, 0.18);
+            --transition: all 0.3s ease;
+            --content-bg: #0b1120;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--content-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* Animated Background */
+        .background-glows {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatGlow 15s infinite ease-in-out;
+        }
+        
+        .glow-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-purple), transparent 70%);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+        
+        .glow-2 {
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-blue), transparent 70%);
+            bottom: -300px;
+            right: -200px;
+            animation-delay: 3s;
+        }
+        
+        .glow-3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent-green), transparent 70%);
+            top: 50%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Custom Glass Effect */
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 12px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background:#dfdfdf;
+            width: 30px;
+            height: 30px;
+            border-radius: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--deep-blue-1);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-white);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent-green);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 140px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .changelog-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .version-filter-btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .version-filter-btn.active,
+        .version-filter-btn:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        /* Changelog Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-green));
+            margin-left: -2px;
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(5) { animation-delay: 1.0s; }
+        
+        .timeline-badge {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            margin-left: -25px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+            animation: pulse 3s infinite;
+        }
+        
+        .timeline-panel {
+            width: calc(50% - 40px);
+            padding: 25px;
+            position: relative;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        .timeline-panel::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--accent-blue);
+            border-right: 2px solid var(--accent-blue);
+            background: inherit;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-panel {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-panel::before {
+            right: -10px;
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-panel {
+            left: calc(50% + 40px);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-panel::before {
+            left: -10px;
+            transform: rotate(-135deg);
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .version-tag {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .version-tag.stable {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+        
+        .version-tag.beta {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+        }
+        
+        .version-tag.legacy {
+            background: rgba(148, 163, 184, 0.2);
+            color: var(--text-gray);
+        }
+        
+        .version-date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .changes-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .changes-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .changes-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        .change-type {
+            display: inline-block;
+            margin-right: 8px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .change-type.added {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+        
+        .change-type.fixed {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue);
+        }
+        
+        .change-type.changed {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+        
+        .change-type.removed {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .contributors {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contributors-label {
+            color: var(--text-gray);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .contributor-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: -10px;
+            border: 2px solid var(--deep-blue-2);
+            transition: transform 0.3s ease;
+        }
+        
+        .contributor-avatar:hover {
+            transform: translateY(-5px);
+            z-index: 2;
+        }
+        
+        /* Download CTA */
+        .download-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .download-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(59, 130, 246, 0.3), 
+                rgba(16, 185, 129, 0.3), 
+                rgba(59, 130, 246, 0.3));
+            background-size: 300% 100%;
+            z-index: -1;
+            transition: var(--transition);
+            opacity: 0;
+            animation: buttonGlow 3s infinite linear;
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-green);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            text-align: center;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+        
+        .copyright {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        
+        @keyframes buttonGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+        
+        @keyframes floatGlow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, 10px) rotate(5deg); }
+            50% { transform: translate(0, 20px) rotate(0deg); }
+            75% { transform: translate(-20px, 10px) rotate(-5deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-badge {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-panel,
+            .timeline-item:nth-child(even) .timeline-panel {
+                width: calc(100% - 90px);
+                left: 70px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-panel::before,
+            .timeline-item:nth-child(even) .timeline-panel::before {
+                left: -10px;
+                transform: rotate(-135deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(15, 23, 42, 0.95);
+                width: 280px;
+                height: calc(100vh - 80px);
+                padding: 30px 40px;
+                transition: var(--transition);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .main-content {
+                padding: 120px 20px 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .changelog-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .timeline-badge {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .glow-circle {
+                filter: blur(60px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-glows">
+        <div class="glow-circle glow-1"></div>
+        <div class="glow-circle glow-2"></div>
+        <div class="glow-circle glow-3"></div>
+    </div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="./" class="logo">
+                <div class="logo-icon"><img src="./assets/icon/logo.png" style="width: 20px; height: 20px;" alt="MayWeb-logo"></div>
+                <div class="logo-text">MayWeb</div>
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="changelog.html" class="active">Changelog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#download" class="btn btn-primary">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h1>MayWeb Changelog</h1>
+                <p>Track the evolution of MayWeb. See what's new, improved, and fixed in each version.</p>
+            </div>
+            
+            <div class="changelog-nav">
+                <button class="version-filter-btn active">All Versions</button>
+                <button class="version-filter-btn">Stable Releases</button>
+                <button class="version-filter-btn">Beta Releases</button>
+                <button class="version-filter-btn">Recent Updates</button>
+            </div>
+            
+            <div class="timeline">
+                <!-- Version 2.0.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-panel custom-glass">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Version 2.0.0</h3>
+                                <span class="version-tag stable">Stable</span>
+                            </div>
+                            <span class="version-date">June 21, 2023</span>
+                        </div>
+                        <p>The biggest update yet! Complete UI overhaul and performance enhancements.</p>
+                        <ul class="changes-list">
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Dark mode system preference detection
+                            </li>
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Docker integration for container management
+                            </li>
+                            <li>
+                                <span class="change-type changed">Changed</span> 
+                                Completely redesigned service management UI
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Memory leak in resource monitoring module
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Permission issues on Windows 11 systems
+                            </li>
+                        </ul>
+                        <div class="contributors">
+                            <span class="contributors-label">Contributors:</span>
+                            <div class="contributor-avatar">JD</div>
+                            <div class="contributor-avatar">SA</div>
+                            <div class="contributor-avatar">MJ</div>
+                            <div class="contributor-avatar">+3</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 1.5.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="timeline-panel custom-glass">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Version 1.5.0</h3>
+                                <span class="version-tag stable">Stable</span>
+                            </div>
+                            <span class="version-date">May 15, 2023</span>
+                        </div>
+                        <p>Performance-focused release with new monitoring tools and stability improvements.</p>
+                        <ul class="changes-list">
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Real-time resource monitoring dashboard
+                            </li>
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Automatic service recovery feature
+                            </li>
+                            <li>
+                                <span class="change-type changed">Changed</span> 
+                                Optimized service startup sequence
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                MySQL 8.0 compatibility issues
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                SSL certificate generation errors
+                            </li>
+                        </ul>
+                        <div class="contributors">
+                            <span class="contributors-label">Contributors:</span>
+                            <div class="contributor-avatar">JD</div>
+                            <div class="contributor-avatar">ER</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 1.4.2 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="timeline-panel custom-glass">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Version 1.4.2</h3>
+                                <span class="version-tag stable">Stable</span>
+                            </div>
+                            <span class="version-date">April 28, 2023</span>
+                        </div>
+                        <p>Maintenance release addressing critical issues reported by our users.</p>
+                        <ul class="changes-list">
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Apache configuration reset on service restart
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Port conflict detection logic
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Tray icon disappearing on some systems
+                            </li>
+                            <li>
+                                <span class="change-type changed">Changed</span> 
+                                Improved error logging for diagnostics
+                            </li>
+                        </ul>
+                        <div class="contributors">
+                            <span class="contributors-label">Contributors:</span>
+                            <div class="contributor-avatar">MJ</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 1.4.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-panel custom-glass">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Version 1.4.0</h3>
+                                <span class="version-tag stable">Stable</span>
+                            </div>
+                            <span class="version-date">April 10, 2023</span>
+                        </div>
+                        <p>Introducing the new extensions marketplace and enhanced customization options.</p>
+                        <ul class="changes-list">
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Extensions marketplace for plugins
+                            </li>
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Custom theme support with color picker
+                            </li>
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                PostgreSQL service management
+                            </li>
+                            <li>
+                                <span class="change-type changed">Changed</span> 
+                                Redesigned settings panel with tabs
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Node.js version switching on Windows 11
+                            </li>
+                        </ul>
+                        <div class="contributors">
+                            <span class="contributors-label">Contributors:</span>
+                            <div class="contributor-avatar">SA</div>
+                            <div class="contributor-avatar">ER</div>
+                            <div class="contributor-avatar">MJ</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 1.3.0 -->
+                <div class="timeline-item">
+                    <div class="timeline-badge">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="timeline-panel custom-glass">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Version 1.3.0</h3>
+                                <span class="version-tag legacy">Legacy</span>
+                            </div>
+                            <span class="version-date">March 5, 2023</span>
+                        </div>
+                        <p>Focus on update system improvements and new CLI tools.</p>
+                        <ul class="changes-list">
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Auto-update rollback feature
+                            </li>
+                            <li>
+                                <span class="change-type added">Added</span> 
+                                Command-line interface (CLI) tools
+                            </li>
+                            <li>
+                                <span class="change-type changed">Changed</span> 
+                                Update scheduling options
+                            </li>
+                            <li>
+                                <span class="change-type fixed">Fixed</span> 
+                                Memory consumption during updates
+                            </li>
+                            <li>
+                                <span class="change-type removed">Removed</span> 
+                                Legacy service management modules
+                            </li>
+                        </ul>
+                        <div class="contributors">
+                            <span class="contributors-label">Contributors:</span>
+                            <div class="contributor-avatar">JD</div>
+                            <div class="contributor-avatar">SA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Download CTA -->
+            <div id="download" class="download-cta custom-glass">
+                <h2>Get the Latest Version</h2>
+                <p>Download MayWeb 2.0 to experience the most powerful and beautiful development environment</p>
+                <div class="cta-btns">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download for Windows
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> View Documentation
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem;">Version 2.0.0 | 64-bit Installer | SHA-256: 9a3f8b7c6d5e4f2a1b0c9d8e7f6a5b4c</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="about.html">About</a>
+            <a href="changelog.html">Changelog</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p class="copyright">&copy; 2023 MayWeb. All rights reserved. | Created with ♥ by Damola</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Version filter buttons
+        document.querySelectorAll('.version-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.version-filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.timeline-item').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
