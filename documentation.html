@@ -36,9 +36,17 @@
             color: var(--text-white);
             line-height: 1.6;
             overflow-x: hidden;
+            overflow-y: scroll;
             background: var(--content-bg);
+            min-height: 100vh;
+        }
+
+        .doc-container {
             display: grid;
             grid-template-columns: 280px 1fr;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
             min-height: 100vh;
         }
 
@@ -641,7 +649,7 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            body {
+            .doc-container {
                 grid-template-columns: 1fr;
             }
 
@@ -817,6 +825,7 @@
         </div>
     </header>
 
+    <div class="doc-container">
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <h2 class="sidebar-title"><i class="fas fa-book-open"></i> Documentation</h2>
