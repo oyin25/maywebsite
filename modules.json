@@ -261,5 +261,17 @@
       "category": "Pocketbase",
       "icon": "fas fa-cube"
     }
+  ],
+  "Other": [
+    {
+      "id": "heidisql",
+      "name": "HeidiSQL",
+      "version": "1.0.0",
+      "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.11_64_Portable.zip",
+      "description": "HeidiSQL from HeidiSQL",
+      "size": "27.82 MB",
+      "category": "HeidiSQL",
+      "icon": "fas fa-cube"
+    }
   ]
 }
