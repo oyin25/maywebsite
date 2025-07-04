@@ -262,15 +262,27 @@
       "icon": "fas fa-cube"
     }
   ],
-  "Other": [
+  "HeidiSQL": [
     {
       "id": "heidisql",
       "name": "HeidiSQL",
-      "version": "1.0.0",
+      "version": "12.11_64",
       "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.11_64_Portable.zip",
       "description": "HeidiSQL from HeidiSQL",
       "size": "27.82 MB",
       "category": "HeidiSQL",
+      "icon": "fas fa-cube"
+    }
+  ]
+  "Redis": [
+    {
+      "id": "redis",
+      "name": "Redis",
+      "version": "5.0.14.1",
+      "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+      "description": "Redis from Tporadowski",
+      "size": "12.01 MB",
+      "category": "Redis",
       "icon": "fas fa-cube"
     }
   ]
