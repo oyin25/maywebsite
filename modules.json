@@ -273,7 +273,7 @@
       "category": "HeidiSQL",
       "icon": "fas fa-cube"
     }
-  ]
+  ],
   "Redis": [
     {
       "id": "redis",
