@@ -1,0 +1,289 @@
+{
+  "PHP": [
+    {
+      "id": "php-8-4-7",
+      "name": "PHP 8.4.7",
+      "version": "8.4.7",
+      "url": "https://windows.php.net/downloads/releases/archives/php-8.4.7-Win32-vs17-x64.zip",
+      "description": "PHP-8.4 from PHP",
+      "size": "32.36 MB",
+      "category": "PHP",
+      "icon": "fab fa-php"
+    },
+    {
+      "id": "php-8-3-7",
+      "name": "PHP 8.3.7",
+      "version": "8.3.7",
+      "url": "https://windows.php.net/downloads/releases/archives/php-8.3.7-Win32-vs16-x64.zip",
+      "description": "PHP-8.3 from PHP",
+      "size": "30.80 MB",
+      "category": "PHP",
+      "icon": "fab fa-php"
+    },
+    {
+      "id": "php-8-2-7",
+      "name": "PHP 8.2.7",
+      "version": "8.2.7",
+      "url": "https://windows.php.net/downloads/releases/archives/php-8.2.7-Win32-vs16-x64.zip",
+      "description": "PHP-8.2 from PHP",
+      "size": "Unknown",
+      "category": "PHP",
+      "icon": "fab fa-php"
+    },
+    {
+      "id": "php-8-1-7",
+      "name": "PHP 8.1.7",
+      "version": "8.1.7",
+      "url": "https://windows.php.net/downloads/releases/archives/php-8.1.7-Win32-vs16-x64.zip",
+      "description": "PHP-8.1 from PHP",
+      "size": "Unknown",
+      "category": "PHP",
+      "icon": "fab fa-php"
+    }
+  ],
+  "Web Servers": [
+    {
+      "id": "apache-2-4-63",
+      "name": "Apache 2.4.63",
+      "version": "2.4.63",
+      "url": "https://www.apachelounge.com/download/VS17/binaries/httpd-2.4.63-250122-win64-VS17.zip",
+      "description": "Apache-2.4.63 from Web Servers",
+      "size": "Unknown",
+      "category": "Web Servers",
+      "icon": "fas fa-server"
+    },
+    {
+      "id": "apache-2-4-57",
+      "name": "Apache 2.4.57",
+      "version": "2.4.57",
+      "url": "https://www.apachelounge.com/download/VS16/binaries/httpd-2.4.57-win64-VS16.zip",
+      "description": "Apache-2.4.57 from Web Servers",
+      "size": "Unknown",
+      "category": "Web Servers",
+      "icon": "fas fa-server"
+    },
+    {
+      "id": "nginx-1-27-4",
+      "name": "Nginx 1.27.4",
+      "version": "1.27.4",
+      "url": "https://nginx.org/download/nginx-1.27.4.zip",
+      "description": "Nginx-1.27.4 from Web Servers",
+      "size": "Unknown",
+      "category": "Web Servers",
+      "icon": "fas fa-server"
+    }
+  ],
+  "Node.js": [
+    {
+      "id": "node-23-11",
+      "name": "node 23.11",
+      "version": "23.11",
+      "url": "https://nodejs.org/dist/v23.11.0/node-v23.11.0-win-x64.zip",
+      "description": "node-23.11 from Node.js",
+      "size": "Unknown",
+      "category": "Node",
+      "icon": "fab fa-node-js"
+    },
+    {
+      "id": "node-22-14",
+      "name": "node 22.14",
+      "version": "22.14",
+      "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-win-x64.zip",
+      "description": "node-22.14 from Node.js",
+      "size": "Unknown",
+      "category": "Node",
+      "icon": "fab fa-node-js"
+    }
+  ],
+  "phpMyAdmin": [
+    {
+      "id": "phpmyadmin",
+      "name": "phpmyadmin",
+      "version": "6.0",
+      "url": "https://files.phpmyadmin.net/snapshots/phpMyAdmin-6.0+snapshot-english.zip",
+      "description": "phpmyadmin-6.0snapshot from phpMyAdmin",
+      "size": "11.4 MB",
+      "category": "phpMyAdmin",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "phpmyadmin",
+      "name": "phpmyadmin",
+      "version": "5.2.2",
+      "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.2/phpMyAdmin-5.2.2-english.zip",
+      "description": "phpmyadmin from phpMyAdmin",
+      "size": "13.2 MB",
+      "category": "phpMyAdmin",
+      "icon": "fas fa-database"
+    }
+  ],
+  "DB Tools": [
+    {
+      "id": "dbeaver",
+      "name": "DBeaver",
+      "version": "1.0.0",
+      "url": "https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip",
+      "description": "DBeaver from DB Tools",
+      "size": "Unknown",
+      "category": "DB Tools",
+      "icon": "fas fa-database"
+    }
+  ],
+  "MySQL": [
+    {
+      "id": "mysql-9-1",
+      "name": "mysql 9.1",
+      "version": "9.1",
+      "url": "https://dev.mysql.com/get/Downloads/MySQL-9.1/mysql-9.1.0-winx64.zip",
+      "description": "mysql-9.1 from MySQL",
+      "size": "Unknown",
+      "category": "MySQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "mysql-8-4",
+      "name": "mysql 8.4",
+      "version": "8.4",
+      "url": "https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.3-winx64.zip",
+      "description": "mysql-8.4 from MySQL",
+      "size": "Unknown",
+      "category": "MySQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "mysql-8-0",
+      "name": "mysql 8.0",
+      "version": "8.0",
+      "url": "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.40-winx64.zip",
+      "description": "mysql-8.0 from MySQL",
+      "size": "Unknown",
+      "category": "MySQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "mysql-5-7",
+      "name": "mysql 5.7",
+      "version": "5.7",
+      "url": "https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.39-winx64.zip",
+      "description": "mysql-5.7 from MySQL",
+      "size": "Unknown",
+      "category": "MySQL",
+      "icon": "fas fa-database"
+    }
+  ],
+  "MariaDb": [
+    {
+      "id": "mariadb-11-8",
+      "name": "mariadb 11.8",
+      "version": "9.1",
+      "url": "https://archive.mariadb.org//mariadb-11.8.2/winx64-packages/mariadb-11.8.2-winx64.zip",
+      "description": "mariadb-11.8 from MySQL",
+      "size": "Unknown",
+      "category": "MariaDb",
+      "icon": "fas fa-database"
+    }
+  ],
+  "PostgreSQL": [
+    {
+      "id": "postgresql-17-2",
+      "name": "postgresql 17.2",
+      "version": "17.2",
+      "url": "https://sbp.enterprisedb.com/getfile.jsp?fileid=1259294",
+      "description": "postgresql-17.2 from PostgreSQL",
+      "size": "Unknown",
+      "category": "PostgreSQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "postgresql-16-6",
+      "name": "postgresql 16.6",
+      "version": "16.6",
+      "url": "https://sbp.enterprisedb.com/getfile.jsp?fileid=1259297",
+      "description": "postgresql-16.6 from PostgreSQL",
+      "size": "Unknown",
+      "category": "PostgreSQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "id": "postgresql-15-10",
+      "name": "postgresql 15.10",
+      "version": "15.10",
+      "url": "https://sbp.enterprisedb.com/getfile.jsp?fileid=1259300",
+      "description": "postgresql-15.10 from PostgreSQL",
+      "size": "Unknown",
+      "category": "PostgreSQL",
+      "icon": "fas fa-database"
+    }
+  ],
+  "MongoDB": [],
+  "VS Code": [
+    {
+      "id": "code",
+      "name": "code",
+      "version": "1.0.0",
+      "url": "https://go.microsoft.com/fwlink/?Linkid=850641",
+      "description": "code from VS Code",
+      "size": "Unknown",
+      "category": "VS Code",
+      "icon": "fas fa-code"
+    }
+  ],
+  "Golang": [
+    {
+      "id": "go-1-24",
+      "name": "go 1.24",
+      "version": "1.24",
+      "url": "https://go.dev/dl/go1.24.1.windows-amd64.zip",
+      "description": "go-1.24 from Golang",
+      "size": "Unknown",
+      "category": "Golang",
+      "icon": "fab fa-golang"
+    },
+    {
+      "id": "go-1-23",
+      "name": "go 1.23",
+      "version": "1.23",
+      "url": "https://go.dev/dl/go1.23.4.windows-amd64.zip",
+      "description": "go-1.23 from Golang",
+      "size": "Unknown",
+      "category": "Golang",
+      "icon": "fab fa-golang"
+    }
+  ],
+  "Pocketbase": [
+    {
+      "id": "pocketbase",
+      "name": "pocketbase",
+      "version": "1.0.0",
+      "url": "https://github.com/pocketbase/pocketbase/releases/download/v0.25.9/pocketbase_0.25.9_windows_amd64.zip",
+      "description": "pocketbase from Pocketbase",
+      "size": "Unknown",
+      "category": "Pocketbase",
+      "icon": "fas fa-cube"
+    }
+  ],
+  "HeidiSQL": [
+    {
+      "id": "heidisql",
+      "name": "HeidiSQL",
+      "version": "12.11_64",
+      "url": "https://www.heidisql.com/downloads/releases/HeidiSQL_12.11_64_Portable.zip",
+      "description": "HeidiSQL from HeidiSQL",
+      "size": "27.82 MB",
+      "category": "HeidiSQL",
+      "icon": "fas fa-cube"
+    }
+  ],
+  "Redis": [
+    {
+      "id": "redis",
+      "name": "Redis",
+      "version": "5.0.14.1",
+      "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+      "description": "Redis from Tporadowski",
+      "size": "12.01 MB",
+      "category": "Redis",
+      "icon": "fas fa-cube"
+    }
+  ]
+}
