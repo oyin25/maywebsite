@@ -47,10 +47,11 @@
   /* Hide entire slot if ad reports empty (JS toggles display:none) */
 </style>
 <script>
-const hasAdContent = document.querySelector('.ad-banner, .ad-content');
+const fallback = document.querySelector('.ad-fallback');
+const present = fallback && fallback.textContent.trim().length > 0;
 window.parent.postMessage({
     type: 'mayweb-ad-status',
-    present: !!hasAdContent
+    present
 }, '*');
 </script>
 
@@ -64,4 +65,5 @@ window.parent.postMessage({
   </a>
 
 </div>
+
 
