@@ -47,15 +47,11 @@
   /* Hide entire slot if ad reports empty (JS toggles display:none) */
 </style>
 <script>
-  (function () {
-    function ready(fn){ document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn); }
-    ready(function(){
-      const hasText  = (document.body.textContent || '').trim().length > 0;
-      const hasMedia = document.images.length > 0 || document.querySelector('video,svg,canvas');
-      const present  = !!(hasText || hasMedia);
-      try { parent.postMessage({ type: 'mayweb-ad-status', present }, '*'); } catch(e) {}
-    });
-  })();
+const hasAdContent = document.querySelector('.ad-banner, .ad-content');
+window.parent.postMessage({
+    type: 'mayweb-ad-status',
+    present: !!hasAdContent
+}, '*');
 </script>
 
 
@@ -68,3 +64,4 @@
   </a>
 
 </div>
+
